@@ -1,20 +1,11 @@
-var array = ["abc", "acb", "b^ac", "te   st", "b   ca", "cab ", "cbv  a"]
+function findUnique(array) {
+  var obj = {};
 
-
-function findUniq(array, value) {
-    array=array.map(function(element){return element.replace(/[\s{2,}]+/g, '')})
-    for (var i = 0; i < array.length; i++) {
-    if (array[i]===value) return value;
+  for (var i = 0; i < array.length; i++) {
+    var str = array[i];
+    obj[str] = true; 
   }
-    
-    return false;
+
+  return Object.keys(obj); 
 }
-
-findUniq(array, 'test') // 'test'
-
-
-// value - значение в кавычках
-
-
-
 
